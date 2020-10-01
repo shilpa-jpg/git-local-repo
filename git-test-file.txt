@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time ----- editing1----editing2-----editing3------editing4
+import time 
 
 class LoginTests():
 
@@ -33,3 +33,6 @@ class LoginTests():
 
 ff = LoginTests()
 ff.test_validLogin()
+
+
+________________________________________doing chances for privatebranch1
