@@ -1,0 +1,107 @@
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+
+
+
+class PracticeSelenium:
+    def practice(self):
+
+        driver = webdriver.Chrome('C:\\Users\\shilp\\Downloads\\UFT_One_15.0_DVD\\Unified Functional Testing\\MSI\\Micro Focus\\Unified Functional Testing\\bin\\WebDriver\\chromedriver.exe')
+        driver.maximize_window()
+        baseURL = 'https://letskodeit.teachable.com/'
+        driver.get(baseURL)
+        driver.implicitly_wait(20)
+        title = driver.title
+        print(title)
+
+        clickonPractice = driver.find_element(By.XPATH,"//a[@href='/pages/practice']")
+        clickonPractice.click()
+        print('Clicked on Practice')
+
+        getText = driver.find_element_by_xpath("//h1[contains(text(),'Practice Page')]")
+        getText.text
+        print(getText.text)
+
+        # login = driver.find_element_by_link_text("Login")
+        # login.click()
+        # print("Clicked on login")
+        #
+        # emailaddress = driver.find_element_by_xpath("//input[@type = 'email']")
+        # emailaddress.send_keys()
+        # print("EmailAddress Entered")
+        #
+        # password = driver.find_element_by_xpath("//input[@type = 'password']")
+        # password.send_keys()
+        # print("Password Entered")
+        #
+        # loginclick = driver.find_element_by_xpath("//input[@type = 'submit']")
+        # loginclick.click()
+        # print("Logged in")
+        # destinationFileName = "C:/Users/shilp/Desktop/Test.png"
+        #
+        # try:
+        #     driver.save_screenshot(destinationFileName)
+        #     print("Screenshots saved successfully")
+        # except NotADirectoryError:
+        #     print("Screenshot not saved")
+
+
+        # radiobutton = driver.find_element_by_id("bmwradio")
+        # radiobutton.click()
+        # print("Radio Button selected successfully")
+        # time.sleep(5)
+        #
+        # selectvaluefrmdropdown = Select(driver.find_element_by_id("carselect"))
+        # selectvaluefrmdropdown.select_by_visible_text("Benz")
+        # print("Value selected successfully from drop down")
+        # time.sleep(5)
+        #
+        #
+        # selectcheckboxvalues1 = driver.find_element_by_id("bmwcheck")
+        # selectcheckboxvalues1.click()
+        # selectcheckboxvalues2 = driver.find_element_by_id("benzcheck")
+        # selectcheckboxvalues2.click()
+        # print("Check box values selected successfully")
+        # time.sleep(3)
+        #
+        # parenthandle = driver.current_window_handle
+        # openwindowclick = driver.find_element_by_id("openwindow")
+        # openwindowclick.click()
+        # time.sleep(3)
+        #
+        #
+        # handles = driver.window_handles
+        # for childhandle in handles:
+        #     if childhandle not in parenthandle:
+        #         driver.switch_to.window(childhandle)
+        #     print("window is switched successfully")
+        #
+        # searchCourses = driver.find_element_by_id("search-courses")
+        # searchCourses.send_keys("Python")
+        # clickOnCourseIcon = driver.find_element_by_xpath("//div[contains(text(),'Learn Python 3 from scratch')]")
+        # clickOnCourseIcon.click()
+        # print("Course selected successfully")
+        # clickonPractice = driver.find_element(By.XPATH, "//a[@href='/pages/practice']")
+        # clickonPractice.click()
+        # print('Clicked on Practice')
+        # driver.maximize_window()
+        # time.sleep(3)
+        #
+        # # Switch to frame by using frame id
+        # driver.execute_script("window.scrollBy(0,1280)") # scroll down the window
+        # driver.switch_to.frame("courses-iframe")
+        # switchFrame = driver.find_element_by_id("search-courses")
+        # switchFrame.send_keys("Python")
+        # driver.execute_script("window.scrollBy(0,-1280)") # scroll up the window
+
+        elementlist = driver.find_elements_by_id("product")
+        for list in elementlist:
+            print(list.get_attribute('name'))
+
+
+
+p = PracticeSelenium()
+p.practice()
