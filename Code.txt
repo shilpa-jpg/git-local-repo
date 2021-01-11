@@ -1,0 +1,52 @@
+from collections import Counter
+
+
+class Solution:
+
+    def __init__(self):
+        pass
+
+    # words that appear in more than one list
+    @staticmethod
+    def element_apperance(nested_list):
+        Output = set(nested_list[0])
+        for l in nested_list[1:]:
+            Output &= set(l)
+        # Converting to list
+        Output = list(Output)
+        print("Elements that appear in more than one list are:", Output)
+
+    # The total number of unique words across all lists
+    @staticmethod
+    def unique_words(nested_list):
+        result = set(x for l in nested_list for x in l)
+        print("unique elements from list are:", list(result))
+        print("Total number of unique elements are:", len(result))
+
+    # Top five frequent words in all the lists
+    @staticmethod
+    def frequent_element(nested_list1):
+        single_list = [item for sublist in nested_list1 for item in sublist]
+        c = Counter(single_list)
+        print("Top 5 frequent elements in a list are:", c.most_common(5))
+
+    def test(self):
+        s.element_apperance([["apple", "mango", "cherry", "apple"],
+                             ["apple", "mango"],
+                             ["mango", "mango", "apple"],
+                             ["apple", "mango", "apple"]])
+
+        s.unique_words([["apple", "mango", "cherry"],
+                        ["apple", "mango", "apple"],
+                        ["mango", "cherry", "mango"],
+                        ["apple", "cherry"]])
+
+        s.frequent_element([["apple", "mango", "banana", "orange", "grapes", "kiwi", "pineapple"],
+                            ["apple", "mango", "cherry", "orange", "grapes"],
+                            ["apple", "mango", "cherry", "banana", "kiwi"],
+                            ["apple", "mango", "cherry", "orange", "pineapple"],
+                            ["kiwi", "apple", "pineapple"]])
+
+
+s = Solution()
+s.test()
