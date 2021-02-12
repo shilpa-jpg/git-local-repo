@@ -12,6 +12,11 @@ pipeline {
                 echo 'py.test testcases/test_practicePage.py'
             }
         }
+        stage('Deliver') {
+            steps {
+                echo 'Deliver Stage : py.test testcases/test_practicePage.py'
+            }
+        }
     }
     post {
         always {
