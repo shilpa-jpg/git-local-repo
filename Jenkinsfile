@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'python -m py_compile testCases/test_practicePage.py'
-                stash(name: 'compiled-results', includes: 'testCases/*.py*')
+
             }
         }
     }
