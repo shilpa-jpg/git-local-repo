@@ -3,14 +3,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'python -m py_compile testCases/test_practicePage.py'
+                echo 'Build is successful'
 
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'py.test --junit-xml test-reports/results.xml testcases/test_practicePage.py'
             }
         }
     }
     post {
         always {
-            echo 'This will always run'
+             junit 'test-reports/results.xml'
         }
         success {
             echo 'This will run only if successful'
