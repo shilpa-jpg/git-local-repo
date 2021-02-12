@@ -28,6 +28,7 @@ class test_practicePage(unittest.TestCase):
         self.prac_obj.mouse_hover()
         self.prac_obj.switch_frame("Python")
 
+# Close driver
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
