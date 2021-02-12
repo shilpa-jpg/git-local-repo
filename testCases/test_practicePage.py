@@ -1,11 +1,10 @@
 import unittest
 from selenium import webdriver
 
-
 from pageObjects.practicePage import Practice
 
-class test_practicePage(unittest.TestCase):
 
+class test_practicePage(unittest.TestCase):
     BaseURL = "https://letskodeit.teachable.com/"
     driver = webdriver.Chrome(
         "C:\\Users\\shilp\\Downloads\\UFT_One_15.0_DVD\\Unified Functional Testing\\MSI\\Micro Focus\\Unified Functional Testing\\bin\\WebDriver\\chromedriver.exe")
@@ -34,8 +33,5 @@ class test_practicePage(unittest.TestCase):
         cls.driver.quit()
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     unittest.main()
-
-
-
