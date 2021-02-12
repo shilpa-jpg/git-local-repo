@@ -27,6 +27,7 @@ class test_practicePage(unittest.TestCase):
         self.prac_obj.web_table_details()
         self.prac_obj.mouse_hover()
         self.prac_obj.switch_frame("Python")
+        print("Whole test has been passed")
 
 # Close driver
     @classmethod
