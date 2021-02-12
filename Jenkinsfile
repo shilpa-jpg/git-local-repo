@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'py.test --junit-xml test-reports/results.xml testcases/test_practicePage.py'
+                echo 'py.test testcases/test_practicePage.py'
             }
         }
     }
