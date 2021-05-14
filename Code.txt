@@ -1,11 +1,11 @@
 from collections import Counter
 
-
+#Second pull request test
 class Solution:
 
     def __init__(self):
         pass
-
+    #Third pull request test
     # words that appear in more than one list
     @staticmethod
     def element_apperance(nested_list):
