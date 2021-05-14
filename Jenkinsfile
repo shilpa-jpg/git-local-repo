@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'py.test testcases/test_practicePage.py'
+                echo 'py.test testcases/test_practicePage.py'
             }
         }
         stage('Deliver') {
